@@ -1,6 +1,7 @@
 package com.sbl.emp.controller;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,9 +14,9 @@ public class Experiment {
 		
 	}
 
-	@RequestMapping("/home")
+	@GetMapping(path ="/home" )
 	public String home(){
-		return "Home";
+		return "Home get mappinngs";
 	}
 
 }
