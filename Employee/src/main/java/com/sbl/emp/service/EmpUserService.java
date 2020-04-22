@@ -1,8 +1,8 @@
 package com.sbl.emp.service;
 
-import com.sbl.emp.model.EmpUser;
+import com.sbl.emp.model.User;
 
 public interface EmpUserService {
 
-	EmpUser getEmpUser(String emailId);
+	User getEmpUser(String emailId);
 }

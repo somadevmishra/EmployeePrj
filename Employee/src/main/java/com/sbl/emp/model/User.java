@@ -19,9 +19,9 @@ import lombok.Data;
 @Entity
 @Table(name = "user")
 @Data
-public class EmpUser {
+public class User {
 
-	public EmpUser() {
+	public User() {
 		// TODO Auto-generated constructor stub
 	}
 

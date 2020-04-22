@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.sbl.emp.model.EmpUser;
+import com.sbl.emp.model.User;
 import com.sbl.emp.repo.EmpUserRepository;
 
 @Service
@@ -22,7 +22,7 @@ public class EmpUserDetailsServiceImpl implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
-		EmpUser user = userRepository.findByEmailId(username);
+		User user = userRepository.findByEmailId(username);
 		EmpUserDetails userDetails = new EmpUserDetails(user);
 		
 		return userDetails;

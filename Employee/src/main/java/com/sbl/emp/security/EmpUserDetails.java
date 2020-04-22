@@ -7,9 +7,12 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.sbl.emp.model.EmpUser;
+import com.sbl.emp.model.User;
 import com.sbl.emp.model.Role;
+import com.sbl.emp.util.ApplicationConstants;
+
 
 
 public class EmpUserDetails implements UserDetails {
@@ -19,13 +22,13 @@ public class EmpUserDetails implements UserDetails {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	EmpUser empUser;
+	User empUser;
 	
 	public EmpUserDetails() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public EmpUserDetails(EmpUser user) {
+	public EmpUserDetails(User user) {
 		empUser = user;
 	}
 
@@ -43,7 +46,8 @@ public class EmpUserDetails implements UserDetails {
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return empUser.getPassword();
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(ApplicationConstants.PASSWORDENCODERSTRENGTH.intValue());
+		return encoder.encode(empUser.getPassword());
 	}
 
 	@Override

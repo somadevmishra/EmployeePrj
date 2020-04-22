@@ -22,7 +22,5 @@ public class App
         
         SpringApplication.run(App.class, args);
     }
-	/*
-	 * @RequestMapping("/") public String home(){ return "Home"; }
-	 */
+	
 }

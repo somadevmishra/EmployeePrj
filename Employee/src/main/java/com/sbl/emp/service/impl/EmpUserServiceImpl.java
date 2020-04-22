@@ -3,7 +3,7 @@ package com.sbl.emp.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sbl.emp.model.EmpUser;
+import com.sbl.emp.model.User;
 import com.sbl.emp.repo.EmpUserRepository;
 import com.sbl.emp.service.EmpUserService;
 
@@ -18,7 +18,7 @@ public class EmpUserServiceImpl implements EmpUserService {
 	}
 
 	@Override
-	public EmpUser getEmpUser(String emailId) {
+	public User getEmpUser(String emailId) {
 		// TODO Auto-generated method stub
 		return empUserRepository.findByEmailId(emailId);
 	}

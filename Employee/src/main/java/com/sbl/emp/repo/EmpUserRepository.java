@@ -3,10 +3,10 @@ package com.sbl.emp.repo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.sbl.emp.model.EmpUser;
+import com.sbl.emp.model.User;
 
 @Repository
-public interface EmpUserRepository extends CrudRepository<EmpUser, Long> {
+public interface EmpUserRepository extends CrudRepository<User, Long> {
 
-	EmpUser findByEmailId(String emailId);
+	User findByEmailId(String emailId);
 }

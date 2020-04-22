@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sbl.emp.model.EmpUser;
+import com.sbl.emp.model.User;
 import com.sbl.emp.model.Employee;
 import com.sbl.emp.service.EmpUserService;
 import com.sbl.emp.service.EmployeeService;
@@ -46,8 +46,8 @@ public class EmployeeController {
 	}
 	
 	@GetMapping(path = "/getuser/{emailId}")
-	public ResponseEntity<EmpUser> getUser(@PathVariable("emailId") String emailId){
-		EmpUser user = empUserService.getEmpUser(emailId);
+	public ResponseEntity<User> getUser(@PathVariable("emailId") String emailId){
+		User user = empUserService.getEmpUser(emailId);
 		return ResponseEntity.ok(user);
 	}
 }
